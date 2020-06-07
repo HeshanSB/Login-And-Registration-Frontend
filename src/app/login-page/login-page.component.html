@@ -1,0 +1,68 @@
+<div>
+    <div style="margin-left: 10cm; margin-right: 10cm; margin-top: 2cm; border-style: solid; background-color: rgb(245, 252, 189); border-radius:15px;">
+        <div style="margin-left: 3cm; margin-top: 1cm; margin-bottom: 1cm;">
+            <h2>User Login</h2>
+            <form [formGroup]="loginForm" id="loginForm">
+                <table>
+                    <tr>
+                        <td class="form_label">
+                            <label></label>Email
+                        </td> 
+                        <td class="form_label">
+                            <label></label>:
+                        </td>      
+                        <td>
+                            <mat-form-field>
+                                <mat-label>Email Address(Username)</mat-label>
+                                <input matInput placeholder="Enter your email" formControlName="username" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="username.hasError('email') && !username.hasError('required')">
+                                Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="username.hasError('required') && isFormSubmitted">
+                                Required
+                            </mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form_label">
+                            <label class="required_field"></label>Password
+                        </td>   
+                        <td class="form_label">
+                            <label></label>:
+                        </td>     
+                        <td>
+                            <mat-form-field>
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Enter Password" type="password" formControlName="password" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="password.hasError('required') && isFormSubmitted">
+                                Required
+                            </mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">
+                            <button type="button" (click)="onSubmit()" style="background-color: rgb(87, 60, 209);
+                            border: none;
+                            color: white;
+                            padding: 16px 32px;
+                            text-decoration: none;
+                            margin: 4px 2px;
+                            cursor: pointer;">
+                                Login
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <p>
+                        <b> Create a new account.? <a href="registration">register here</a></b>
+                        </p>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    <div>
+</div>
+
+

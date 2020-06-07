@@ -1,0 +1,157 @@
+<div>
+    <div style="margin-left: 10cm; margin-right: 10cm; margin-top: 2cm; border-style: solid; background-color: rgb(245, 252, 189); border-radius:15px;">
+        <div style="margin-left: 3cm; margin-top: 1cm; margin-bottom: 1cm;">
+            <h2>User Registration</h2>
+            <form [formGroup]="registrationForm" id="registrationForm">
+                <table>
+                    <tr>
+                        <td class="form_label">
+                            <label></label>Email
+                        </td> 
+                        <td class="form_label">
+                            <label></label>:
+                        </td>      
+                        <td>
+                            <mat-form-field>
+                                <mat-label>Email Address(Username)</mat-label>
+                                <input matInput placeholder="Enter your email" formControlName="username" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="username.hasError('email') && !username.hasError('required')">
+                                Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="username.hasError('required') && isFormSubmitted">
+                                Required
+                            </mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form_label">
+                            <label class="required_field"></label>Password
+                        </td>   
+                        <td class="form_label">
+                            <label></label>:
+                        </td>     
+                        <td>
+                            <mat-form-field>
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Enter Password" type="password" formControlName="password" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="password.hasError('minlength')">
+                                Password must have at least 8 characters
+                            </mat-error>
+                                <mat-error *ngIf="password.hasError('required') && isFormSubmitted">
+                                    Required
+                                </mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form_label">
+                            <label class="required_field"></label>Confirm Password
+                        </td> 
+                        <td class="form_label">
+                            <label></label>:
+                        </td>       
+                        <td>
+                            <mat-form-field>
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Enter Password" type="password" formControlName="cpassword" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="cpassword.hasError('required') && isFormSubmitted">
+                                Required
+                            </mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form_label">
+                            <label class="required_field"></label>Firstname
+                        </td> 
+                        <td class="form_label">
+                            <label></label>:
+                        </td>       
+                        <td>
+                            <mat-form-field>
+                                <mat-label>Firstname</mat-label>
+                                <input matInput placeholder="Enter firstname" formControlName="firstname" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="firstname.hasError('required') && isFormSubmitted">
+                                Required
+                            </mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form_label">
+                            <label class="required_field"></label>Middlename
+                        </td> 
+                        <td class="form_label">
+                            <label></label>:
+                        </td>       
+                        <td>
+                            <mat-form-field>
+                                <mat-label>Middlename</mat-label>
+                                <input matInput placeholder="Enter middlename" formControlName="middlename" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="middlename.hasError('required') && isFormSubmitted">
+                                Required
+                            </mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form_label">
+                            <label class="required_field"></label>Lastname
+                        </td> 
+                        <td class="form_label">
+                            <label></label>:
+                        </td>       
+                        <td>
+                            <mat-form-field>
+                                <mat-label>Lastname</mat-label>
+                                <input matInput placeholder="Enter lastname" formControlName="lastname" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="lastname.hasError('required') && isFormSubmitted">
+                                Required
+                            </mat-error>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form_label">
+                            <label class="required_field"></label>Country
+                        </td>
+                        <td class="form_label">
+                            <label></label>:
+                        </td>        
+                        <td>
+                            <mat-form-field>
+                                <mat-select placeholder="Select your country" formControlName="country" required>
+                                    <mat-option *ngFor="let country of countryList" value="country">{{country}}</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="country.hasError('required') && isFormSubmitted">
+                                    Required
+                                </mat-error>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">
+                            <button type="button" (click)="onSubmit()" style="background-color: rgb(87, 60, 209);
+                            border: none;
+                            color: white;
+                            padding: 16px 32px;
+                            text-decoration: none;
+                            margin: 4px 2px;
+                            cursor: pointer;">
+                                Add
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <p>
+                        <b> Already have an account.? <a href="">login here</a></b>
+                        </p>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    <div>
+</div>
+
+
